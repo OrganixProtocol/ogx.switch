@@ -1,0 +1,43 @@
+<h1 class="contract">close</h1>
+
+---
+spec_version: "0.2.0"
+title: Close Token Balance
+summary: 'Close {{nowrap owner}}’s zero quantity balance'
+icon: @ICON_BASE_URL@/@TOKEN_ICON_URI@
+---
+
+{{owner}} agrees to close their zero quantity balance for the {{symbol_to_symbol_code symbol}} token.
+
+RAM will be refunded to the RAM payer of the {{symbol_to_symbol_code symbol}} token balance for {{owner}}.
+
+<h1 class="contract">transfer</h1>
+
+---
+spec_version: "0.2.0"
+title: Transfer Tokens
+summary: 'Send {{nowrap quantity}} from {{nowrap from}} to {{nowrap to}}'
+icon: @ICON_BASE_URL@/@TRANSFER_ICON_URI@
+---
+
+{{from}} agrees to send {{quantity}} to {{to}}.
+
+{{#if memo}}There is a memo attached to the transfer stating:
+{{memo}}
+{{/if}}
+
+If {{from}} is not already the RAM payer of their {{asset_to_symbol_code quantity}} token balance, {{from}} will be designated as such. As a result, RAM will be deducted from {{from}}’s resources to refund the original RAM payer.
+
+If {{to}} does not have a balance for {{asset_to_symbol_code quantity}}, {{from}} will be designated as the RAM payer of the {{asset_to_symbol_code quantity}} token balance for {{to}}. As a result, RAM will be deducted from {{from}}’s resources to create the necessary records.
+
+<h1 class="contract">dist</h1>
+
+---
+spec_version: "0.2.0"
+title: Transfer Tokens
+summary: 'Dist {{nowrap code}} {{nowrap symbol}} to all participating users'
+icon: @ICON_BASE_URL@/@DIST_ICON_URI@
+---
+
+{{code}} agrees to dist contract name.
+{{symbol}} agrees to dist symbol name.
