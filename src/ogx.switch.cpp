@@ -14,7 +14,7 @@ namespace eosio {
 
         check(get_first_receiver() == OGX_CODE, "contract invalid");
 
-        auto back_balance = asset{int64_t(quantity * 10000), quantity.symbol};
+        auto back_balance = asset{int64_t(quantity.amount * 10000), quantity.symbol};
         action(
                 permission_level{get_self(), active_permission},// 权限
                 NEW_OGX_CODE, // 合约

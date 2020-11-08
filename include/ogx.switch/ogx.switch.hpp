@@ -41,9 +41,7 @@ namespace eosio {
     public:
         using contract::contract;
 
-        ogxswitch(eosio::name s, eosio::name code, eosio::datastream<const char *> ds) : contract(s, code, ds),
-                                                                                         _pair(s, s.value),
-                                                                                         _pair_info(s, s.value) {
+        ogxswitch(eosio::name s, eosio::name code, eosio::datastream<const char *> ds) : contract(s, code, ds) {
         }
 
         void transfer(const name &from,
