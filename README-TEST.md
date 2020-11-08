@@ -1,4 +1,4 @@
-# ogx.presale 介绍
+# ogx.switch 介绍
 
 ogx token pre sale contract
 
@@ -15,7 +15,7 @@ ogx token pre sale contract
 #### 2. 编辑文件 eosio.contracts/CMakeLists.txt:
 
 ```
-add_subdirectory(ogx.presale)
+add_subdirectory(ogx.switch)
 ```
 #### 3. 运行eosio.contracts/build.sh完成编译
  ```
@@ -39,7 +39,7 @@ curl http://faucet-kylin.blockzone.net/get_token/itokenpocket
 cd build
 cleos -u 'http://api.kylin.alohaeos.com' system newaccount itokenpocket ogxpresale11 EOS61Lv9AArofgBUhE4JKtJ5zJrLdRbNBwgPc5sWsxMNT6HtNm5py EOS8gE7XgUVLmF8CN9CCixNaVGFzbxvagVdMm6pqP47eMpuRMUDx8 --buy-ram '20.0000 EOS' --stake-net '1.0000 EOS' --stake-cpu '10.0000 EOS'
 cleos -u 'http://api.kylin.alohaeos.com' set account permission ogxpresale11 active '{"threshold": 1,"keys": [{"key": "EOS8gE7XgUVLmF8CN9CCixNaVGFzbxvagVdMm6pqP47eMpuRMUDx8", "weight": 1}],"accounts": [{"permission":{"actor":"ogxpresale11","permission":"eosio.code"},"weight":1}]}' owner -p ogxpresale11@owner
-cleos -u 'http://api.kylin.alohaeos.com' set contract ogxpresale11 ./ogx.presale -p ogxpresale11
+cleos -u 'http://api.kylin.alohaeos.com' set contract ogxpresale11 ./ogx.switch -p ogxpresale11
 
 //代币合约授权
 cleos -u 'http://api.kylin.alohaeos.com' system newaccount itokenpocket orgainxtoken EOS61Lv9AArofgBUhE4JKtJ5zJrLdRbNBwgPc5sWsxMNT6HtNm5py EOS8gE7XgUVLmF8CN9CCixNaVGFzbxvagVdMm6pqP47eMpuRMUDx8 --buy-ram '20.0000 EOS' --stake-net '1.0000 EOS' --stake-cpu '10.0000 EOS'

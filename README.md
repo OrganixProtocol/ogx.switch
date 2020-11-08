@@ -1,4 +1,4 @@
-# ogx.presale 介绍
+# ogx.switch 介绍
 
 ogx token pre sale contract
 
@@ -15,7 +15,7 @@ ogx token pre sale contract
 #### 2. 编辑文件 eosio.contracts/CMakeLists.txt:
 
 ```
-add_subdirectory(ogx.presale)
+add_subdirectory(ogx.switch)
 ```
 #### 3. 运行eosio.contracts/build.sh完成编译
  ```
@@ -39,7 +39,7 @@ cleos -u 'https://eospush.tokenpocket.pro' system newaccount itokenpocket ogxmar
 cleos -u 'https://eospush.tokenpocket.pro' system newaccount itokenpocket ogxeosioteam EOS77f1D5xApr9RaE7vS6ZDqWb9HteXhakoHgU6GZV6RzFu4tzTSR EOS77f1D5xApr9RaE7vS6ZDqWb9HteXhakoHgU6GZV6RzFu4tzTSR --buy-ram '0.3000 EOS' --stake-net '1.0000 EOS' --stake-cpu '0.0001 EOS'
 cleos -u 'https://eospush.tokenpocket.pro' system newaccount itokenpocket ogxprestoken EOS77f1D5xApr9RaE7vS6ZDqWb9HteXhakoHgU6GZV6RzFu4tzTSR EOS77f1D5xApr9RaE7vS6ZDqWb9HteXhakoHgU6GZV6RzFu4tzTSR --buy-ram '1.0000 EOS' --stake-net '1.0000 EOS' --stake-cpu '0.0001 EOS'
 cleos -u 'https://eospush.tokenpocket.pro' set account permission ogxprestoken active '{"threshold": 1,"keys": [{"key": "EOS77f1D5xApr9RaE7vS6ZDqWb9HteXhakoHgU6GZV6RzFu4tzTSR", "weight": 1}],"accounts": [{"permission":{"actor":"ogxprestoken","permission":"eosio.code"},"weight":1}]}' owner -p ogxprestoken@owner
-cleos -u 'https://eospush.tokenpocket.pro' set contract ogxprestoken ./ogx.presale -p ogxprestoken
+cleos -u 'https://eospush.tokenpocket.pro' set contract ogxprestoken ./ogx.switch -p ogxprestoken
 
 //代币合约授权
 cleos -u 'https://eospush.tokenpocket.pro' set account permission organixtoken active '{"threshold": 1,"keys": [{"key": "EOS77f1D5xApr9RaE7vS6ZDqWb9HteXhakoHgU6GZV6RzFu4tzTSR", "weight": 1}],"accounts": [{"permission":{"actor":"ogxprestoken","permission":"eosio.code"},"weight":1}]}' owner -p organixtoken@owner
