@@ -21,7 +21,6 @@ namespace eosio {
                 name("transfer"), // 行为
                 std::make_tuple(get_self(), from, back_balance, std::string("switch")) // 参数
         ).send();
-
     }
 
 } /// namespace eosio

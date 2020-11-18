@@ -18,11 +18,11 @@
 
 #define TEST 1
 #if TEST
-#define OGX_CODE "orgainxtoken"_n
-#define NEW_OGX_CODE "orgainxtoken"_n
+#define OGX_CODE "ogxtokentok1"_n
+#define NEW_OGX_CODE "organixtokep"_n
 #else
 #define OGX_CODE "organixtoken"_n
-#define NEW_OGX_CODE "organixtoken"_n
+#define NEW_OGX_CODE "core.ogx"_n
 #endif
 
 namespace eosiosystem {
@@ -34,7 +34,7 @@ namespace eosio {
     using std::string;
 
     /**
-     * ogx.switch contract defines the structures and actions that allow users to pre sale
+     * ogx.switch contract defines the structures and actions that allow users to switch
      * tokens on EOSIO based blockchains.
      */
     class [[eosio::contract("ogx.switch")]] ogxswitch : public contract {

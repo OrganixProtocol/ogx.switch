@@ -25,8 +25,8 @@ add_subdirectory(ogx.switch)
 ## 方案
 ```
 合约帐号: ogxswitch111
-代币老OGX合约帐号: organixtoke1
-代币OGX合约帐号: organixtoken
+代币老OGX合约帐号: ogxtokentok1
+代币OGX合约帐号: organixtokep
 
 ```
 
@@ -36,22 +36,15 @@ add_subdirectory(ogx.switch)
 curl http://faucet-kylin.blockzone.net/get_token/itokenpocket
 
 cd build
-cleos -u 'http://api.kylin.alohaeos.com' system newaccount itokenpocket ogxswitch111 EOS61Lv9AArofgBUhE4JKtJ5zJrLdRbNBwgPc5sWsxMNT6HtNm5py EOS8gE7XgUVLmF8CN9CCixNaVGFzbxvagVdMm6pqP47eMpuRMUDx8 --buy-ram '20.0000 EOS' --stake-net '1.0000 EOS' --stake-cpu '10.0000 EOS'
-cleos -u 'http://api.kylin.alohaeos.com' set account permission ogxswitch111 active '{"threshold": 1,"keys": [{"key": "EOS8gE7XgUVLmF8CN9CCixNaVGFzbxvagVdMm6pqP47eMpuRMUDx8", "weight": 1}],"accounts": [{"permission":{"actor":"ogxswitch111","permission":"eosio.code"},"weight":1}]}' owner -p ogxswitch111@owner
+cleos -u 'http://api.kylin.alohaeos.com' system newaccount itokenpocket ogxswitch111 EOS61Lv9AArofgBUhE4JKtJ5zJrLdRbNBwgPc5sWsxMNT6HtNm5py EOS61Lv9AArofgBUhE4JKtJ5zJrLdRbNBwgPc5sWsxMNT6HtNm5py --buy-ram '20.0000 EOS' --stake-net '1.0000 EOS' --stake-cpu '10.0000 EOS'
+cleos -u 'http://api.kylin.alohaeos.com' set account permission ogxswitch111 active '{"threshold": 1,"keys": [{"key": "EOS61Lv9AArofgBUhE4JKtJ5zJrLdRbNBwgPc5sWsxMNT6HtNm5py", "weight": 1}],"accounts": [{"permission":{"actor":"ogxswitch111","permission":"eosio.code"},"weight":1}]}' owner -p ogxswitch111@owner
 cleos -u 'http://api.kylin.alohaeos.com' set contract ogxswitch111 ./ogx.switch -p ogxswitch111
 
 //老代币合约
-cleos -u 'http://api.kylin.alohaeos.com' system newaccount itokenpocket orgainxtoke1 EOS61Lv9AArofgBUhE4JKtJ5zJrLdRbNBwgPc5sWsxMNT6HtNm5py EOS8gE7XgUVLmF8CN9CCixNaVGFzbxvagVdMm6pqP47eMpuRMUDx8 --buy-ram '20.0000 EOS' --stake-net '1.0000 EOS' --stake-cpu '10.0000 EOS'
-cleos -u 'http://api.kylin.alohaeos.com' set contract orgainxtoke1 ./eosio.token -p orgainxtoke1
-cleos -u 'http://api.kylin.alohaeos.com' push action orgainxtoke1 create '["orgainxtoke1", "100000000.0000 OGX"]' -p orgainxtoke1
-cleos -u 'http://api.kylin.alohaeos.com' push action orgainxtoke1 issue '["orgainxtoke1", "100000000.0000 OGX", ""]' -p orgainxtoke1
-
-//新代币合约
-cleos -u 'http://api.kylin.alohaeos.com' system newaccount itokenpocket organixtoken EOS61Lv9AArofgBUhE4JKtJ5zJrLdRbNBwgPc5sWsxMNT6HtNm5py EOS8gE7XgUVLmF8CN9CCixNaVGFzbxvagVdMm6pqP47eMpuRMUDx8 --buy-ram '20.0000 EOS' --stake-net '1.0000 EOS' --stake-cpu '10.0000 EOS'
-cleos -u 'http://api.kylin.alohaeos.com' set account permission organixtoken active '{"threshold": 1,"keys": [{"key": "EOS8gE7XgUVLmF8CN9CCixNaVGFzbxvagVdMm6pqP47eMpuRMUDx8", "weight": 1}],"accounts": [{"permission":{"actor":"ogxswitch111","permission":"eosio.code"},"weight":1}]}' owner -p organixtoken@owner
-cleos -u 'http://api.kylin.alohaeos.com' set contract organixtoken ./eosio.token -p organixtoken
-cleos -u 'http://api.kylin.alohaeos.com' push action organixtoken create '["organixtoken", "100000000.00000000 OGX"]' -p organixtoken
-cleos -u 'http://api.kylin.alohaeos.com' push action organixtoken issue '["organixtoken", "100000000.00000000 OGX", ""]' -p organixtoken
+cleos -u 'http://api.kylin.alohaeos.com' system newaccount itokenpocket ogxtokentok1 EOS61Lv9AArofgBUhE4JKtJ5zJrLdRbNBwgPc5sWsxMNT6HtNm5py EOS61Lv9AArofgBUhE4JKtJ5zJrLdRbNBwgPc5sWsxMNT6HtNm5py --buy-ram '20.0000 EOS' --stake-net '1.0000 EOS' --stake-cpu '10.0000 EOS'
+cleos -u 'http://api.kylin.alohaeos.com' set contract ogxtokentok1 ./eosio.token -p ogxtokentok1
+cleos -u 'http://api.kylin.alohaeos.com' push action ogxtokentok1 create '["ogxtokentok1", "100000000.0000 OGX"]' -p ogxtokentok1
+cleos -u 'http://api.kylin.alohaeos.com' push action ogxtokentok1 issue '["ogxtokentok1", "100000000.0000 OGX", ""]' -p ogxtokentok1
 
 ```
 ## 查询
@@ -61,6 +54,10 @@ cleos -u 'http://api.kylin.alohaeos.com' get currency balance organixtoke1 token
 
 ## 参与switch
 ```
-cleos -u 'http://api.kylin.alohaeos.com' push action orgainxtoke1 transfer '["organixttest", "orgainxtoke1", "30000.0000 OGX", ""]' -p organixttest
+//获取老的token
+cleos -u 'http://api.kylin.alohaeos.com' push action ogxtokentok1 transfer '["ogxtokentok1", "organixttest", "30000.0000 OGX", ""]' -p organixttest
+
+//兑换新的token
+cleos -u 'http://api.kylin.alohaeos.com' push action ogxtokentok1 transfer '["organixttest", "ogxswitch111", "30000.0000 OGX", ""]' -p organixttest
 
 ```

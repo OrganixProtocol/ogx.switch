@@ -24,21 +24,21 @@ add_subdirectory(ogx.switch)
  
 ## 方案
 ```
-合约帐号: ogxswitch111
+合约帐号: switch.ogx
 代币老OGX合约帐号: organixtoken
-代币OGX合约帐号: ogx
+代币OGX合约帐号: core.ogx
 
 ```
 
 ## 部署
 ```
 cd build
-cleos -u 'https://eospush.tokenpocket.pro' system newaccount itokenpocket ogxswitch111 EOS61Lv9AArofgBUhE4JKtJ5zJrLdRbNBwgPc5sWsxMNT6HtNm5py EOS8gE7XgUVLmF8CN9CCixNaVGFzbxvagVdMm6pqP47eMpuRMUDx8 --buy-ram '20.0000 EOS' --stake-net '1.0000 EOS' --stake-cpu '10.0000 EOS'
-cleos -u 'https://eospush.tokenpocket.pro' set account permission ogxswitch111 active '{"threshold": 1,"keys": [{"key": "EOS8gE7XgUVLmF8CN9CCixNaVGFzbxvagVdMm6pqP47eMpuRMUDx8", "weight": 1}],"accounts": [{"permission":{"actor":"ogxswitch111","permission":"eosio.code"},"weight":1}]}' owner -p ogxswitch111@owner
-cleos -u 'https://eospush.tokenpocket.pro' set contract ogxswitch111 ./ogx.switch -p ogxswitch111
+cleos -u 'https://eospush.tokenpocket.pro' system newaccount ogx switch.ogx EOS61Lv9AArofgBUhE4JKtJ5zJrLdRbNBwgPc5sWsxMNT6HtNm5py EOS8gE7XgUVLmF8CN9CCixNaVGFzbxvagVdMm6pqP47eMpuRMUDx8 --buy-ram '20.0000 EOS' --stake-net '1.0000 EOS' --stake-cpu '10.0000 EOS'
+cleos -u 'https://eospush.tokenpocket.pro' set account permission switch.ogx active '{"threshold": 1,"keys": [{"key": "EOS8gE7XgUVLmF8CN9CCixNaVGFzbxvagVdMm6pqP47eMpuRMUDx8", "weight": 1}],"accounts": [{"permission":{"actor":"switch.ogx","permission":"eosio.code"},"weight":1}]}' owner -p switch.ogx@owner
+cleos -u 'https://eospush.tokenpocket.pro' set contract switch.ogx ./ogx.switch -p switch.ogx
 
 //新代币合约授权
-cleos -u 'https://eospush.tokenpocket.pro' set account permission ogx active '{"threshold": 1,"keys": [{"key": "EOS8gE7XgUVLmF8CN9CCixNaVGFzbxvagVdMm6pqP47eMpuRMUDx8", "weight": 1}],"accounts": [{"permission":{"actor":"ogxswitch111","permission":"eosio.code"},"weight":1}]}' owner -p ogx@owner
+cleos -u 'https://eospush.tokenpocket.pro' set account permission ogx active '{"threshold": 1,"keys": [{"key": "EOS8gE7XgUVLmF8CN9CCixNaVGFzbxvagVdMm6pqP47eMpuRMUDx8", "weight": 1}],"accounts": [{"permission":{"actor":"switch.ogx","permission":"eosio.code"},"weight":1}]}' owner -p ogx@owner
 
 ```
 ## 查询
